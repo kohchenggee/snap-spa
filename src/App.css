@@ -2,7 +2,7 @@
   text-align: center;
   padding: 20px;
   min-height: 100vh;
-  background-color: #fafafa;
+  background-color: var(--almost-white);
 }
 
 .App-logo {
@@ -67,7 +67,6 @@
 .LogosContainer {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
 }
 
 .LogoImages {

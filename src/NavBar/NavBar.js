@@ -4,7 +4,7 @@ import hamburger from "../assets/icon-menu.svg";
 import closeMenu from "../assets/icon-close-menu.svg";
 import arrowUp from "../assets/arrow-up.svg";
 import arrowDown from "../assets/arrow-down.svg";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import "./NavBar.css";
 
@@ -85,29 +85,37 @@ const MobileMenu = ({ showDrawer, setShowDrawer }) => {
 
 const NavBar = () => {
   const [showDrawer, setShowDrawer] = useState(false);
+
+  const renderDropDown = () => {
+    return (
+      <Fragment>
+        {TITLE.map((item, index) => (
+          <ul className="label" key={`${item}_${index}`}>
+            <li className="withDropdown">
+              {item}{" "}
+              <ul className="dropdown">
+                {SECTION[TITLE[index]].map((sectionItem) => (
+                  <li className="sectionItem" key={`d_${sectionItem.name}`}>
+                    {sectionItem.img && (
+                      <img src={sectionItem.img} alt={sectionItem.img} />
+                    )}
+                    {sectionItem.name}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          </ul>
+        ))}
+      </Fragment>
+    );
+  };
   return (
     <div>
       <nav>
         <div className="navBarContainer">
           <img src={logo} alt="logo" className="logo" />
           <div className="selectionsContainer">
-            {TITLE.map((item, index) => (
-              <ul className="label" key={`${item}_${index}`}>
-                <li className="withDropdown">
-                  {item}{" "}
-                  <ul className="dropdown">
-                    {SECTION[TITLE[index]].map((sectionItem) => (
-                      <li className="sectionItem" key={`d_${sectionItem.name}`}>
-                        {sectionItem.img && (
-                          <img src={sectionItem.img} alt={sectionItem.img} />
-                        )}
-                        {sectionItem.name}
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              </ul>
-            ))}
+            {renderDropDown()}
             <div className="label navLabel" aria-label="Careers">
               Careers
             </div>

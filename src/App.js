@@ -6,6 +6,7 @@ import audioPhile from "./assets/client-audiophile.svg";
 import dataBiz from "./assets/client-databiz.svg";
 import maker from "./assets/client-maker.svg";
 import meet from "./assets/client-meet.svg";
+
 function App() {
   return (
     <div className="App">

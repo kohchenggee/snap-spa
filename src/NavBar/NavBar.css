@@ -16,7 +16,7 @@
 }
 
 .registerButton {
-  border: solid 1px var(--medium-gray);
+  border: solid 2px var(--medium-gray);
   color: var(--medium-gray);
   border-radius: 8px;
   padding: 8px;
@@ -85,7 +85,7 @@ ul li {
 
 ul li ul.dropdown {
   margin-left: -20px;
-  background: white;
+  background: var(--almost-white);
   display: none;
   position: absolute;
   min-width: 120px;
@@ -102,8 +102,13 @@ ul li div:hover ul.dropdown {
   display: block;
 }
 
+ul li:hover ul.dropdown li{
+  color: var(--medium-gray);
+}
+
 ul li:hover ul.dropdown li:hover {
   background-color: lightcyan;
+  color: var(--almost-black);
 }
 
 .sectionItem {
@@ -130,7 +135,7 @@ ul li:hover ul.dropdown li:hover {
 
 .sideDrawer {
   height: 100%;
-  background: white;
+  background: var(--almost-white);
   position: fixed;
   top: 0;
   right: 0;
