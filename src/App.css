@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #fafafa;
 }
 
 .App-logo {
@@ -7,21 +10,68 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.HeaderBreakLine {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MainPage {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.DesktopHeroImage {
+  display: none;
+}
+
+.MobileHeroImage {
+  object-fit: contain;
+  max-width: 80%;
+}
+
+.ImageContainer {
+  width: 100%;
+  order: 1;
+}
+
+.SectionContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  order: 2;
+}
+.DetailContainer {
+  text-align: center;
+  order: 2;
+}
+
+.LearnMoreButton {
+  cursor: pointer;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  background-color: var(--almost-black);
+  color: var(--almost-white);
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-family: epilogue;
+  font-size: 18px;
+  border: solid 1px var(--almost-black);
+}
+
+.LearnMoreButton:hover {
+  background: var(--almost-white);
+  color: var(--almost-black);
+}
+
+.LogosContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.LogoImages {
+  object-fit: contain;
 }
 
 .App-link {
@@ -34,5 +84,51 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 426px) {
+  .HeaderBreakLine {
+    display: inline;
+  }
+  .SectionContainer {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    padding: 2em;
+    padding-bottom: unset;
+    order: 1;
+  }
+
+  .DesktopHeroImage {
+    display: block;
+    max-width: 70%;
+    object-fit: contain;
+  }
+
+  .MobileHeroImage {
+    display: none;
+  }
+
+  .ImageContainer {
+    width: 50%;
+    order: 2;
+  }
+
+  .DetailContainer {
+    text-align: left;
+    flex: 1;
+    order: 1;
+    padding-right: 50px;
+  }
+
+  .LogosContainer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    gap: 10px;
+    max-width: 40%;
+    flex-wrap: wrap;
   }
 }
