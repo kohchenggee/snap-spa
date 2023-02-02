@@ -28,7 +28,7 @@ function App() {
                   processes, create team rituals, and watch productivity soar.
                 </span>
               </div>
-              <button className="LearnMoreButton">Learn more</button>
+              <button className="LearnMoreButton" aria-label="Learn more">Learn more</button>
               <div className="LogosContainer">
                 <img src={dataBiz} className="LogoImages" alt="logo" />
                 <img src={audioPhile} className="LogoImages" alt="logo" />
