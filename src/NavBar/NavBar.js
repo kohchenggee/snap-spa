@@ -91,11 +91,15 @@ const NavBar = () => {
       <Fragment>
         {TITLE.map((item, index) => (
           <ul className="label" key={`${item}_${index}`}>
-            <li className="withDropdown">
+            <li className="withDropdown" aria-label={item}>
               {item}{" "}
               <ul className="dropdown">
                 {SECTION[TITLE[index]].map((sectionItem) => (
-                  <li className="sectionItem" key={`d_${sectionItem.name}`}>
+                  <li
+                    className="sectionItem"
+                    key={`d_${sectionItem.name}`}
+                    aria-label={sectionItem.name}
+                  >
                     {sectionItem.img && (
                       <img src={sectionItem.img} alt={sectionItem.img} />
                     )}
